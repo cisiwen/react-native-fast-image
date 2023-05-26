@@ -40,7 +40,7 @@ public class MediaStoreDataFetcher implements DataFetcher<Bitmap> {
         }
         @Override
         protected Bitmap doInBackground(Void... voids) {
-            Bitmap thumbBitmap;
+            Bitmap thumbBitmap = null;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                  try {
                     thumbBitmap = this.context.getContentResolver().loadThumbnail(this.uri, new Size(200,200), null);
