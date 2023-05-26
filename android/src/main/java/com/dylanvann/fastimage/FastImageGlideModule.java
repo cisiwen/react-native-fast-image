@@ -16,8 +16,8 @@ import com.dylanvann.fastimage.mediastore.MediaStoreLoaderFactory;
 
 // We need an AppGlideModule to be present for progress events to work.
 @GlideModule
-public final class FastImageGlideModule extends AppGlideModule {
-    @Override
+public final class FastImageGlideModule  {
+
     public void applyOptions(Context context, GlideBuilder builder) {
         MemorySizeCalculator calculator = new MemorySizeCalculator.Builder(context).build();
         int defaultMemoryCacheSize = calculator.getMemoryCacheSize();
@@ -31,7 +31,7 @@ public final class FastImageGlideModule extends AppGlideModule {
         builder.setDiskCache(new InternalCacheDiskCacheFactory(context, 1000*1024*1024));
     }
 
-    @Override
+
     public void registerComponents(Context context, Glide glide, Registry registry) {
         registry.prepend(String.class, Bitmap.class, new MediaStoreLoaderFactory(context));
     }
