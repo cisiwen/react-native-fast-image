@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Size;
 
 import androidx.annotation.NonNull;
@@ -41,10 +42,13 @@ public class MediaStoreDataFetcher implements DataFetcher<Bitmap> {
         protected Bitmap doInBackground(Void... voids) {
             Bitmap thumbBitmap;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                try {
+                 try {
                     thumbBitmap = this.context.getContentResolver().loadThumbnail(this.uri, new Size(200,200), null);
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    Log.e("LoadLocalMediaStoreDataTask",this.uri.toString(),e);
+                }
+                catch (Exception e){
+                    Log.e("LoadLocalMediaStoreDataTask",this.uri.toString(),e);
                 }
             } else {
                 thumbBitmap = MediaStore.Images.Thumbnails.getThumbnail(this.context.getContentResolver(),

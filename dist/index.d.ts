@@ -1,25 +1,25 @@
 import React from 'react';
 import { FlexStyle, LayoutChangeEvent, ShadowStyleIOS, StyleProp, TransformsStyle, ImageRequireSource, AccessibilityProps, ViewProps, ColorValue } from 'react-native';
-export declare type ResizeMode = 'contain' | 'cover' | 'stretch' | 'center';
+export type ResizeMode = 'contain' | 'cover' | 'stretch' | 'center';
 declare const resizeMode: {
     readonly contain: "contain";
     readonly cover: "cover";
     readonly stretch: "stretch";
     readonly center: "center";
 };
-export declare type Priority = 'low' | 'normal' | 'high';
+export type Priority = 'low' | 'normal' | 'high';
 declare const priority: {
     readonly low: "low";
     readonly normal: "normal";
     readonly high: "high";
 };
-declare type Cache = 'immutable' | 'web' | 'cacheOnly';
+type Cache = 'immutable' | 'web' | 'cacheOnly';
 declare const cacheControl: {
     readonly immutable: "immutable";
     readonly web: "web";
     readonly cacheOnly: "cacheOnly";
 };
-export declare type Source = {
+export type Source = {
     uri?: string;
     headers?: {
         [key: string]: string;
