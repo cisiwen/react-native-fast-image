@@ -15,7 +15,6 @@ import com.bumptech.glide.module.AppGlideModule;
 import com.dylanvann.fastimage.mediastore.MediaStoreLoaderFactory;
 
 // We need an AppGlideModule to be present for progress events to work.
-@GlideModule
 public final class FastImageGlideModule  {
 
     public void applyOptions(Context context, GlideBuilder builder) {
