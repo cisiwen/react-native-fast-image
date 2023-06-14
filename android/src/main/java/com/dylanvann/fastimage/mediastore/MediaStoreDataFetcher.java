@@ -8,7 +8,7 @@ import android.os.Build;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Size;
-
+import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Priority;
